@@ -1,6 +1,6 @@
 # Семинар 4. Матрицы
 
-def z1():
+def t1():
     """
     Даны точки на плоскости. Найти наиболее удаленную и наиболее близкую точку к (0, 0) из верхней полуплоскости
     """
@@ -10,16 +10,16 @@ def z1():
         x, y = tuple(map(int, string.split()))
         if y > 0:
             distance = (x ** 2 + y ** 2) ** 0.5
-            if max_distance == False or distance > max_distance:
+            if max_distance is False or distance > max_distance:
                 max_distance = distance
                 max_point = (x, y)
-            elif min_distance == False or distance < min_distance:
+            elif min_distance is False or distance < min_distance:
                 min_distance = distance
                 min_point = (x, y)
     print(f'min_point - {min_point}\nmax_point - {max_point}')
 
 
-def z2():
+def t2():
     """
     Транспонирование матрицы
     """
@@ -33,7 +33,7 @@ def z2():
     print(m)
 
 
-def z3():
+def t3():
     """
     Найти максимальный элемент:
      1) над главной диагональю.
@@ -48,7 +48,6 @@ def z3():
     matrix.append([int(j) for j in line])
     for _ in range(len(line) - 1):
         matrix.append([int(j) for j in input().split()])
-    n = len(matrix)
 
     # # 1.
     # max_up_normal = False
@@ -98,7 +97,7 @@ def z3():
     # print(max_up_normal_down_alt)
 
 
-def z4():
+def t4():
     """ Из квадратной матрицы A получить матрицу B
     вычеркиванием всех элементов, принадлежащих главной диагонали
     A(N, N) -> B(N, N-1) """
@@ -112,7 +111,6 @@ def z4():
 
     n = len(matrix_a)
 
-    #.
     matrix_b = [[0 for _ in range(n - 1)] for _ in range(n)]
     for i in range(n):
         for j in range(i):
@@ -123,5 +121,3 @@ def z4():
             print('2', matrix_b[i][j-1])
 
     print(*matrix_b, sep='\n')
-
-z4()
